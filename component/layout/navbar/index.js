@@ -1,24 +1,31 @@
+import Link from "next/link";
 import React from "react";
-import { Button } from "react-bootstrap";
+import {
+  Button,
+  Container,
+  Form,
+  Nav,
+  NavDropdown,
+  Navbar,
+  NavbarCollapse,
+} from "react-bootstrap";
+import Image from "next/image";
 
 
-
-
-const Navbar = () => {
+const NavbarPage = () => {
   return (
     <>
-      {/* Start Header/Navigation  */}
-      <nav
+  <Navbar
         className="custom-navbar navbar navbar navbar-expand-md navbar-dark "
         arial-label="Furni navigation bar"
       >
         <div className="container">
-          <a id="a" className="navbar-brand" href="\">
+          <Link id="a" className="navbar-brand" href="/">
             Furni<span>.</span>
             
-          </a>
+          </Link>
 
-          <button
+          <Button
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
@@ -28,61 +35,77 @@ const Navbar = () => {
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
-          </button>
+          </Button>
 
           <div className="collapse navbar-collapse" id="navbarsFurni">
             <ul className="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
               <li className="nav-item active">
-                <a id="a" className="nav-link" href="\">
-                  Home 
-                </a>
+                <Link className="nav-link" href="/">Home</Link>
+              
               </li>
               <li>
                 
-                <a id="a" className="nav-link" href="./shop">
+                <Link className="nav-link" href="./shop">
                   Shop
-                </a>
+                </Link>
               </li>
               <li>
-                <a id="a" className="nav-link" href="./aboutus">
+                <Link id="a" className="nav-link" href="./aboutus">
                   About us
-                </a>
+                </Link>
               </li>
               <li>
-                <a id="a" className="nav-link" href="./services">
+                <Link id="a" className="nav-link" href="./services">
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a id="a" className="nav-link" href="./blog">
+                <Link id="a" className="nav-link" href="./blog">
                   Blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a v className="nav-link" href="./contactus">
+                <Link v className="nav-link" href="./contactus">
                   Contact us
-                </a>
+                </Link>
               </li>
             </ul>
 
             <ul className="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
               <li>
-                <a id="a" className="nav-link" href="#">
-                  <img src="assets/images/navbarimage/user.svg" />
-                </a>
+                <Link id="a" className="nav-link" href="#">
+                  <Image alt="user" height={20} width={20}  src="/assets/images/navbarimage/user.svg" />
+                </Link>
               </li>
               <li>
-                <a id="a" className="nav-link" href="./cart">
-                  <img src="assets/images/navbarimage/cart.svg" />
-                </a>
+                <Link id="a" className="nav-link" href="./cart">
+                  <Image alt="cart" height={20} width={20} src="/assets/images/navbarimage/cart.svg" />
+                </Link>
               </li>
             </ul>
           </div>
         </div>
-      </nav>
-      {/* End Header/Navigation  */}
+      </Navbar> 
+
+{/* <Navbar expand="lg" className="bg-body-tertiary">
+      <Container>
+        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#link">Link</Nav.Link>
+            </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar> */}
+
+    
     </>
   );
 };
 
-export default Navbar;
+export default NavbarPage;
+  {/* Start Header/Navigation  */}
+    
+      {/* End Header/Navigation  */}

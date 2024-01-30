@@ -1,9 +1,9 @@
 import React from 'react'
-import Navbar from '../navbar'
+import NavbarPage from '../navbar'
 
 const Header = () => {
   return (
-    <Navbar/>
+    <NavbarPage/>
   )
 }
 

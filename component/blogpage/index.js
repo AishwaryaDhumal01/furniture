@@ -1,13 +1,24 @@
 import React from 'react'
 import TopSection from '../landingPage/topSection'
-import BlogSection from '../landingPage/blogSection'
+import Blog from './blog'
 import TestimonialSlider from '../landingPage/testimonialSlider'
 
 const BlogPage = () => {
   return (
     <>
      <TopSection/>
-     <BlogSection/>
+     
+    
+     <div class="blog-section">
+			<div class="container">
+    <Blog/>
+    <Blog/>
+    <Blog/>
+    </div>
+    </div>
+    
+   
+    
      <TestimonialSlider/>
     </>
   )

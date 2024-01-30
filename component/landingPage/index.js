@@ -15,11 +15,11 @@ const LandingPage = () => {
   return (
     <>
    
-   
+  
     <TopSection/>
     <ProductSection/>
     <ChooseUsSection/>
-    <HelpSection/>
+   <HelpSection/>
     <PopularProduct/>
     <TestimonialSlider/>
     <BlogSection/>

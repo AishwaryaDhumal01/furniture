@@ -2,6 +2,9 @@ import React from 'react'
 
 const Footer = () => {
   return (
+
+
+	
     // <!-- Start Footer Section -->
 		<footer className="footer-section">
 			<div className="container relative">
@@ -106,7 +109,7 @@ const Footer = () => {
 
 			</div>
 		</footer>
-		//{/* <!-- End Footer Section -->	 */}
+		// //{/* <!-- End Footer Section -->	 */}
 
   )
 }
