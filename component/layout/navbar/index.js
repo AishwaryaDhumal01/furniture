@@ -65,6 +65,11 @@ const NavbarPage = () => {
                 </Link>
               </li>
               <li>
+                <Link id="a" className="nav-link" href="./news">
+                  News
+                </Link>
+              </li>
+              <li>
                 <Link v className="nav-link" href="./contactus">
                   Contact us
                 </Link>

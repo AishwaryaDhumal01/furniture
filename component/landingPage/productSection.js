@@ -21,7 +21,7 @@ const ProductSection_data = [
 ];
 
 const ProductSection = () => {
-    const numberOfItemsToRender = 2; 
+     
   return (
     //  Start Product Section -->
 
@@ -50,7 +50,7 @@ const ProductSection = () => {
 
           {/* Start Column 2 --> */}
 
-          {ProductSection_data.slice(0, numberOfItemsToRender).map((data, index) => {
+          {ProductSection_data.map((data, index) => {
             return (
               <>
                 {" "}

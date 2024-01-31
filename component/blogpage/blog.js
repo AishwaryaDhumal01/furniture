@@ -12,17 +12,17 @@ const BLOG_DATA = [
   {
     image: "/assets/images/blogimg/post-2.jpg",
     title: "First Time Home Owner Ideas",
-    text: "by",
+    text: " by ",
     name: "Robert Fox",
-    text2: "on",
+    text2: " on ",
     date: "Dec 19, 2021",
   },
   {
     image: "/assets/images/blogimg/post-3.jpg",
     title: "Small Space Furniture Apartment Ideas",
-    text: "by",
+    text: " by ",
     name: "Kristin Watson",
-    text2: "on",
+    text2: " on ",
     date: "Dec 19, 2021",
   },
 ];

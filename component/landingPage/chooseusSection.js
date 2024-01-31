@@ -4,6 +4,7 @@ import Image from 'next/image'
 
 
 const ChooseUsSection = () => {
+    const numberOfItemsToRender=4;
   return (
     // <!-- Start Why Choose Us Section -->
     <div className="why-choose-section">
@@ -15,7 +16,7 @@ const ChooseUsSection = () => {
 
                     <div className="row my-5">
                     {
-                        CHOOSEUSSECTION_DATA.map((data,index)=>{
+                        CHOOSEUSSECTION_DATA.slice(0,numberOfItemsToRender).map((data,index)=>{
                             return(
                                 <>
                                  <div className="col-6 col-md-6">

@@ -1,7 +1,7 @@
 import LayoutPage from "@/component/layout";
-import "@/styles/Home.module.css"
+//import "@/styles/Home.module.css"
 //import "@/styles/globals.css";
-import"@/styles/style.css"
+import"@/styles/my-sass.scss"
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@/styles/tiny-slider.css"
 

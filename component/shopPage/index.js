@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import TopSection from '../landingPage/topSection';
-import Footer from '../layout/footer';
+
 
 const ShopePage = () => {
   const [products, setProducts] = useState([]);
@@ -63,8 +63,7 @@ const ShopePage = () => {
 			</div> 
       </div>
      </div>
-	 <Footer/>
- 
+	 
 	  </>
            
           
