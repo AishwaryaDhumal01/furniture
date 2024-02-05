@@ -149,7 +149,7 @@ a {
       position: absolute;
       width: 255px;
       height: 217px;
-      background-image:   url('/assets/images/topsecimg/dots-light.svg');
+      background-image:url('/assets/images/topsecimg/dots-light.svg');
       background-size: contain;
       background-repeat: no-repeat;
       right: -100px;
@@ -711,6 +711,27 @@ a {
     background: rgba(59, 93, 80, 0.2); } 
 
 
+    .cart-trolley--link{
+      position: relative;
+    }
+    .cart-trolley{
+      position: relative;
+      font-size: 3.2rem;
+    }
+    .cart-total--item{
+      width: 2.4 rem;
+      height: 2.4 rem;
+      position: absolute;
+      background-color: #072e26;
+      color:white;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      top: -20%;
+      left: 70%;
+    }
+
+
 
 
 
@@ -722,3 +743,4 @@ a {
 
     /* https://jsonplaceholder.typicode.com/albums/1/photos */
     /* https://newsapi.org/v2/everything?q=tesla&from=2023-12-31&sortBy=publishedAt&apiKey=db341db25dbe42aaaa78499b4f2f6ea4 */
+    /* https://api.publicapis.org/entries */

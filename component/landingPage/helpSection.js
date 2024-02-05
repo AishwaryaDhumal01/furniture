@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const HelpSection = () => {
@@ -24,7 +25,7 @@ const HelpSection = () => {
                         <li>Donec vitae odio quis nisl dapibus malesuada</li>
                         <li>Donec vitae odio quis nisl dapibus malesuada</li>
                     </ul>
-                    <p><a herf="#" className="btn">Explore</a></p>
+                    <p><Link href="#" className="btn">Explore</Link></p>
                 </div>
             </div>
         </div>

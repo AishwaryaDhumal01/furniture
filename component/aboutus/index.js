@@ -8,7 +8,7 @@ import TopSection_CONTENT from '@/utils/constants/topSectionContent'
 const AboutusPage = () => {
   return (
     <>
-   <TopSection page={TopSection_CONTENT.shop}/>
+   <TopSection page={TopSection_CONTENT.shop.title}/>
    <ChooseUsSection/>
    <OurTeam/>
    <TestimonialSlider/>

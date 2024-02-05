@@ -1,21 +1,22 @@
 import React from 'react'
 import Blog from '../blogpage/blog'
+import Link from 'next/link'
 
 const blogSection = () => {
   return (
 	
 
-<div class="blog-section">
-			<div class="container">
-				<div class="row mb-5">
-					<div class="col-md-6">
-						<h2 class="section-title">Recent Blog</h2>
+<div className="blog-section">
+			<div className="container">
+				<div className="row mb-5">
+					<div className="col-md-6">
+						<h2 className="section-title">Recent Blog</h2>
 					</div>
-					<div class="col-md-6 text-start text-md-end">
-						<a href="#" class="more">View All Posts</a>
+					<div className="col-md-6 text-start text-md-end">
+						<Link href="#" className="more">View All Posts</Link>
 					</div>
 				</div>
-				<Blog/>
+				 <Blog/> 
 		 </div>
 		 </div>
 	  

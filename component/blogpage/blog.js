@@ -1,4 +1,6 @@
+import Link from "next/link";
 import React from "react";
+import { Image } from "react-bootstrap";
 
 const BLOG_DATA = [
   {
@@ -37,34 +39,34 @@ const Blog = () => {
         <div  className="row">
           {BLOG_DATA.map((data, index) => {
             return (
-              <>
+              
              
-                <div  style={{lineHeight: "28px", padding:"20px"}} key={data.index} className="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+                <div  style={{lineHeight: "28px", padding:"20px"}} key={index} className="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
                   <div className="post-entry">
-                    <a href="#" className="post-thumbnail">
-                      <img
+                    <Link href="#" className="post-thumbnail">
+                      <Image height={500} width={500}
                         src={data.image}
                         alt="Image"
                         className="img-fluid"
                       />
-                    </a>
+                    </Link>
                     <div className="post-content-entry">
                       <h3>
-                        <a style={{color:"#454545 "}} href="#">{data.title}</a>
+                        <Link style={{color:"#454545 "}} href="#">{data.title}</Link>
                       </h3>
                       <div className="meta">
                         <span >
-                          {data.text}<a style={{color:"#454545 "}}  href="#">{data.name}</a>
+                          {data.text}<Link style={{color:"#454545 "}}  href="#">{data.name}</Link>
                         </span>{" "}
                         <span>
-                          {data.text2}<a style={{color:"#454545 "}} href="#">{data.date}</a>
+                          {data.text2}<Link style={{color:"#454545 "}} href="#">{data.date}</Link>
                         </span>
                       </div>
                     </div>
                   </div>
                 </div>
                 
-              </>
+             
             );
           })}
           </div>

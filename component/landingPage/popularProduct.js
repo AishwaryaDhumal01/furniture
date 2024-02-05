@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { Image } from "react-bootstrap";
 
@@ -30,8 +31,8 @@ const PopularProduct = () => {
         <div className="row">
           {POPULARPRODUCT_DATA.map((data, index) => {
             return (
-              <>
-                <div className="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+             
+                <div key={index} className="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
                   <div className="product-item-sm d-flex">
                     <div className="thumbnail">
                       <Image height={60} width={130} src={data.image} alt="Image" className="img-fluid" />
@@ -40,12 +41,12 @@ const PopularProduct = () => {
                       <h3>{data.title}</h3>
                       <p>{data.desc}</p>
                       <p>
-                        <a href="#">{data.btnText}</a>
+                        <Link href="#">{data.btnText}</Link>
                       </p>
                     </div>
                   </div>
                 </div>
-              </>
+             
             );
           })}
         </div>

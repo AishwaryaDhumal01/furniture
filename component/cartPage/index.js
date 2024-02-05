@@ -1,12 +1,14 @@
 import React from 'react'
 import TopSection from '../landingPage/topSection'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const CartPage = () => {
   return (
    <>
    <TopSection/>
 
-   <div class="untree_co-section before-footer-section">
+   <div className="untree_co-section before-footer-section">
             <div className="container">
               <div className="row mb-5">
                 <form className="col-md-12" method="post">
@@ -25,7 +27,7 @@ const CartPage = () => {
                       <tbody>
                         <tr>
                           <td className="product-thumbnail">
-                            <img src="images/product-1.png" alt="Image" className="img-fluid"/>
+                            <Image height={200} width={200} src="/assets/images/productsecimg/product-1.png" alt="Image" className="img-fluid"/>
                           </td>
                           <td className="product-name">
                             <h2 className="h5 text-black">Product 1</h2>
@@ -44,12 +46,12 @@ const CartPage = () => {
         
                           </td>
                           <td>$49.00</td>
-                          <td><a href="#" className="btn btn-black btn-sm">X</a></td>
+                          <td><Link href="#" className="btn btn-black btn-sm">X</Link></td>
                         </tr>
         
                         <tr>
                           <td className="product-thumbnail">
-                            <img src="images/product-2.png" alt="Image" className="img-fluid"/>
+                            <Image  height={200} width={200} src="/assets/images/productsecimg/product-2.png" alt="Image" className="img-fluid"/>
                           </td>
                           <td className="product-name">
                             <h2 className="h5 text-black">Product 2</h2>
@@ -68,7 +70,7 @@ const CartPage = () => {
         
                           </td>
                           <td>$49.00</td>
-                          <td><a href="#" className="btn btn-black btn-sm">X</a></td>
+                          <td><Link href="#" className="btn btn-black btn-sm">X</Link></td>
                         </tr>
                       </tbody>
                     </table>
@@ -88,11 +90,11 @@ const CartPage = () => {
                   </div>
                   <div className="row">
                     <div className="col-md-12">
-                      <label className="text-black h4" for="coupon">Coupon</label>
+                      <label className="text-black h4" htmlFor="coupon">Coupon</label>
                       <p>Enter your coupon code if you have one.</p>
                     </div>
                     <div className="col-md-8 mb-3 mb-md-0">
-                      <input type="text" className="form-control py-3" id="coupon" placeholder="Coupon Code"/>
+                      <input type="text" className="form-control py-3" id="coupon" placeholder="Coupon Code" />
                     </div>
                     <div className="col-md-4">
                       <button className="btn btn-black">Apply Coupon</button>

@@ -83,7 +83,7 @@ const ContactForm = () => {
                 <div className="row">
                   <div className="col-6">
                     <div className="form-group">
-                      <label className="text-black" for="fname">First name</label>
+                      <label className="text-black" htmlFor="fname">First name</label>
                       <input id="fname" type="text" name="username" className="form-control" placeholder="enter your name" values={formik.values.name} onChange={formik.handleChange} onBlur={formik.handleBlur} ></input><br></br>
                     {formik.touched.username && formik.errors.username && <p style={{ color: "red" }}>{formik.errors.username}</p>}<br></br>
                      
@@ -91,7 +91,7 @@ const ContactForm = () => {
                   </div>
                   <div className="col-6">
                     <div className="form-group">
-                      <label className="text-black" for="lname"  id="lname">Last name</label>
+                      <label className="text-black" htmlFor="lname"  id="lname">Last name</label>
                       <input type="text" name="lastname" className="form-control" placeholder="enter your lastname" values={formik.values.name} onChange={formik.handleChange} onBlur={formik.handleBlur} ></input><br></br>
 
                       {formik.touched.lastname && formik.errors.lastname && <p style={{ color: "red" }}>{formik.errors.lastnamename}</p>}<br></br>
@@ -99,14 +99,14 @@ const ContactForm = () => {
                   </div>
                 </div>
                 <div className="form-group">
-                  <label className="text-black" for="email">Email address</label>
+                  <label className="text-black" htmlFor="email">Email address</label>
                   <input type="email" className="form-control" id="email" name='email' placeholder="enter your email" values={formik.values.email} onChange={formik.handleChange}  />
                   {formik.touched.email && formik.errors.email && <p style={{ color: "red" }}>{formik.errors.email}</p>}<br></br>
 
                 </div>
 
                 <div className="form-group mb-5">
-                  <label className="text-black" for="message">Message</label>
+                  <label className="text-black" htmlFor="message">Message</label>
                   <textarea name="message" className="form-control" id="message" cols="60" rows="5" placeholder="enter your message" values={formik.values.email} onChange={formik.handleChange} ></textarea>
                 </div>
 

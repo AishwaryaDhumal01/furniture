@@ -18,8 +18,8 @@ const ChooseUsSection = () => {
                     {
                         CHOOSEUSSECTION_DATA.slice(0,numberOfItemsToRender).map((data,index)=>{
                             return(
-                                <>
-                                 <div className="col-6 col-md-6">
+                                
+                                 <div  key={data.id} className="col-6 col-md-6">
                                 <div className="feature">
                                 <div className="icon">
                                  
@@ -29,7 +29,7 @@ const ChooseUsSection = () => {
                                 <p>{data.desc}</p>
                             </div>
                             </div>
-                            </>
+                           
                                
                             )
                         })
@@ -38,9 +38,9 @@ const ChooseUsSection = () => {
                     </div>
                 </div>
 
-                <div class="col-lg-5">
-                    <div class="img-wrap">
-                        <Image height={1000} width={1000} src="/assets/images/chooseimg/why-choose-us-img.jpg" alt="Image" class="img-fluid"/>
+                <div className="col-lg-5">
+                    <div className="img-wrap">
+                        <Image height={1000} width={1000} src="/assets/images/chooseimg/why-choose-us-img.jpg" alt="Image" className="img-fluid"/>
                     </div>
                 </div>
 

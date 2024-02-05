@@ -7,18 +7,13 @@ const BlogPage = () => {
   return (
     <>
      <TopSection/>
-     
-    
-     <div class="blog-section">
-			<div class="container">
-    <Blog/>
-    <Blog/>
-    <Blog/>
-    </div>
-    </div>
-    
-   
-    
+     <div className="blog-section">
+			<div className="container">
+       <Blog/>
+       <Blog/>
+       <Blog/>
+      </div>
+     </div>
      <TestimonialSlider/>
     </>
   )

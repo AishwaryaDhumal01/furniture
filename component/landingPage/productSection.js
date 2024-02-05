@@ -52,9 +52,9 @@ const ProductSection = () => {
 
           {ProductSection_data.map((data, index) => {
             return (
-              <>
-                {" "}
-                <div className="col-md-12 col-lg-3 mb-5 mb-lg-0">
+              
+              
+                <div key={index} className="col-md-12 col-lg-3 mb-5 mb-lg-0">
                   {" "}
                   <Link className="product-item" href="cart.html">
                     <Image
@@ -76,7 +76,7 @@ const ProductSection = () => {
                     </span>
                   </Link>
                 </div>
-              </>
+             
             );
           })}
         </div>

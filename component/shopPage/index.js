@@ -1,31 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import TopSection from '../landingPage/topSection';
+import TopSection_CONTENT from '@/utils/constants/topSectionContent';
+import { UseGlobalContext } from '@/context/userContext';
+import { useContext } from 'react';
+import { UserContext } from '@/context/userContext';
 
 
 const ShopePage = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const {products}  = useContext(UserContext);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('https://api.escuelajs.co/api/v1/products/?categoryId=3');
-        setProducts(response.data);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-        setLoading(false);
+   const CatogryHandle = () =>{
+      if("mensClthing"===products.catrgory){
+        console.log(xkvdkvjkg,products.catrgory)
+        
       }
-    };
-
-    fetchData();
-  }, []); // The empty dependency array ensures that this effect runs once, similar to componentDidMount
-
-  useEffect(() => {
-    console.log('Products:', products);
-  }, [products]);
-
+   }
+   
   return (
 	<>
  <div>
@@ -36,7 +27,8 @@ const ShopePage = () => {
      
     </div>
 
-    <TopSection/>
+    <TopSection page={TopSection_CONTENT.shop.title}/>
+    <button onClick={CatogryHandle}>catogery</button>
    
     <div className="untree_co-section product-section before-footer-section">
       <div className="container">
@@ -45,10 +37,10 @@ const ShopePage = () => {
           
 		  {products.map(product => (
 			
-			 <div key={product.id} className="col-12 col-md-4 col-lg-3 mb-5  " >
+			 <div  key={product.id} className="col-12 col-md-4 col-lg-3 mb-5  " >
             <a  className="product-item" href="#">
-              <img src={product.images} alt={product.name}className="img-fluid product-thumbnail" />
-              <h3 className="product-title">{product.name}</h3>
+              <img  src={product.image} alt={product.title}className="img-fluid product-thumbnail" />
+              <h3 className="product-title">{product.title}</h3>
               
 			  <strong className="product-price">Price: ${product.price}</strong>
               <span className="icon-cross">
@@ -74,95 +66,3 @@ const ShopePage = () => {
 };
 
 export default ShopePage;
-{/* <img src="images/product-3.png" className="img-fluid product-thumbnail"/>
-            <h3 className="product-title">Nordic Chair</h3>
-            <strong className="product-price">$50.00</strong> 
-        <div className="col-12 col-md-4 col-lg-3 mb-5">
-          <a className="product-item" href="#">
-            <img src="images/product-1.png" className="img-fluid product-thumbnail"/>
-            <h3 className="product-title">Nordic Chair</h3>
-            <strong className="product-price">$50.00</strong>
-
-            <span className="icon-cross">
-              <img src="images/cross.svg" className="img-fluid"/>
-            </span>
-          </a>
-        </div> 
-
-
-        <div className="col-12 col-md-4 col-lg-3 mb-5">
-          <a className="product-item" href="#">
-            <img src="images/product-2.png" className="img-fluid product-thumbnail"/>
-            <h3 className="product-title">Kruzo Aero Chair</h3>
-            <strong className="product-price">$78.00</strong>
-
-            <span className="icon-cross">
-              <img src="images/cross.svg" className="img-fluid"/>
-            </span>
-          </a>
-        </div>
-
-        <div className="col-12 col-md-4 col-lg-3 mb-5">
-          <a className="product-item" href="#">
-            <img src="images/product-3.png" className="img-fluid product-thumbnail"/>
-            <h3 className="product-title">Ergonomic Chair</h3>
-            <strong className="product-price">$43.00</strong>
-
-            <span className="icon-cross">
-              <img src="images/cross.svg" className="img-fluid"/>
-            </span>
-          </a>
-        </div>
-
-
-        <div className="col-12 col-md-4 col-lg-3 mb-5">
-          <a className="product-item" href="#">
-            <img src="images/product-3.png" className="img-fluid product-thumbnail"/>
-            <h3 className="product-title">Nordic Chair</h3>
-            <strong className="product-price">$50.00</strong>
-
-            <span className="icon-cross">
-              <img src="images/cross.svg" className="img-fluid"/>
-            </span>
-          </a>
-        </div> 
-
-        <div className="col-12 col-md-4 col-lg-3 mb-5">
-          <a className="product-item" href="#">
-            <img src="images/product-1.png" className="img-fluid product-thumbnail"/>
-            <h3 className="product-title">Nordic Chair</h3>
-            <strong className="product-price">$50.00</strong>
-
-            <span className="icon-cross">
-              <img src="images/cross.svg" className="img-fluid"/>
-            </span>
-          </a>
-        </div> 
-        
-      
-        <div className="col-12 col-md-4 col-lg-3 mb-5">
-          <a className="product-item" href="#">
-            <img src="images/product-2.png" className="img-fluid product-thumbnail"/>
-            <h3 className="product-title">Kruzo Aero Chair</h3>
-            <strong className="product-price">$78.00</strong>
-
-            <span className="icon-cross">
-              <img src="images/cross.svg" className="img-fluid"/>
-            </span>
-          </a>
-        </div>
-        
-        <div className="col-12 col-md-4 col-lg-3 mb-5">
-          <a className="product-item" href="#">
-            <img src="images/product-3.png" className="img-fluid product-thumbnail"/>
-            <h3 className="product-title">Ergonomic Chair</h3>
-            <strong className="product-price">$43.00</strong>
-
-            <span className="icon-cross">
-              <img src="images/cross.svg" className="img-fluid"/>
-            </span>
-          </a>
-        </div>*/}
-      
-        
-

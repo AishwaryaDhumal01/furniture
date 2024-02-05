@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { FiShoppingCart } from "react-icons/fi";
 import {
   Button,
   Container,
@@ -70,7 +71,7 @@ const NavbarPage = () => {
                 </Link>
               </li>
               <li>
-                <Link v className="nav-link" href="./contactus">
+                <Link  className="nav-link" href="./contactus">
                   Contact us
                 </Link>
               </li>
@@ -78,13 +79,15 @@ const NavbarPage = () => {
 
             <ul className="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
               <li>
-                <Link id="a" className="nav-link" href="#">
+                <Link id="a" className="nav-link" href="./login">
                   <Image alt="user" height={20} width={20}  src="/assets/images/navbarimage/user.svg" />
                 </Link>
               </li>
               <li>
-                <Link id="a" className="nav-link" href="./cart">
-                  <Image alt="cart" height={20} width={20} src="/assets/images/navbarimage/cart.svg" />
+                <Link id="a" className="nav-link cart-trolley--link " href="./cart">
+                <FiShoppingCart className="cart-trolley" style={{color:"white", height:"20px", width:"20px"}} /> 
+                  <span className="cart-total--item" style={{paddingLeft: "5px", paddingRight: "5px"
+     }}>10</span>
                 </Link>
               </li>
             </ul>
@@ -92,18 +95,6 @@ const NavbarPage = () => {
         </div>
       </Navbar> 
 
-{/* <Navbar expand="lg" className="bg-body-tertiary">
-      <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar> */}
 
     
     </>
