@@ -734,6 +734,166 @@ a {
 
 
 
+    .button-container {
+      margin-top: 20px;
+      display: flex;
+      justify-content:space-evenly;
+      margin-bottom: 20px; /* Add margin at the bottom to create space between buttons and other content */
+    }
+     
+
+.custom-button {
+  background-color:#072e26; /* Button background color */
+  color: #ffffff; /* Button text color */
+  border: none; /* Remove button border */
+  padding: 10px 20px; /* Button padding */
+  font-size: 16px; /* Button font size */
+  cursor: pointer; /* Show pointer cursor on hover */
+}
+
+.custom-button:hover {
+  background-color: #072e26; /* Change background color on hover */
+}
+
+
+
+
+/* LoginForm.css */
+
+.login-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.error-message {
+  color: #ff0000;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+
+
+
+
+
+.dropdown-menu-item:hover {
+  background-color: #3b5d50; /* Change to the desired hover color */
+  color: white; /* Change text color for better visibility */
+}
+
+
+#login-link:hover,
+#signup-link:hover {
+  /* color: #FF5733; Change to the desired hover color */
+  text-decoration: underline; /* Optionally add underline on hover */
+}
+
+
+/* LoginForm.css */
+
+/* Submit button */
+.btn-primary {
+  width: fit-content; /* Width based on content */
+  background-color: #072e26;/* Margin top for spacing */
+}
+
+/* Icons */
+.bottom-icons {
+  display: flex;
+  justify-content: space-between; /* Space between icons */
+  margin-top: 20px; /* Margin top for spacing */
+}
+
+.back-icon,
+.signup-icon {
+  font-size: 24px; /* Icon size */
+  color: #3b5d40; /* Icon color */
+}
+
+.custom-submit-button {
+  width: 100%; /* Width based on content */
+  margin-top: 30px; /* Margin top for spacing */
+  margin-left: auto; /* Center the button horizontally */
+  margin-right: auto; /* Center the button horizontally */
+  display: block; /* Make the button a block element */
+  
+
+  
+}
+
+
+
+
+
+
+
+/* SignupForm.css */
+
+/* Container styles */
+.signup-form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Form styles */
+.signup-form {
+  margin-top: 20px;
+}
+
+/* Input field styles */
+.signup-form .form-group {
+  margin-bottom: 15px;
+}
+
+/* Error message styles */
+.signup-form .error-message {
+  color: #dc3545;
+  font-size: 0.875rem;
+}
+
+/* Submit button styles */
+.signup-form .btn-primary {
+  width: 100%;
+}
+
+/* Checkbox styles */
+.signup-form .form-check {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* Icons styles */
+.signup-form .back-icon,
+.signup-form .signup-icon {
+  font-size: 24px;
+  color: #007bff;
+}
+
+
 
 
     /* serpapi.com/home-depot-search-api */

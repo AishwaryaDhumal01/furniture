@@ -1,29 +1,15 @@
 import Link from "next/link";
 import React from "react";
-import { FiShoppingCart } from "react-icons/fi";
-import {
-  Button,
-  Container,
-  Form,
-  Nav,
-  NavDropdown,
-  Navbar,
-  NavbarCollapse,
-} from "react-bootstrap";
-import Image from "next/image";
-
+import { FiUser, FiShoppingCart } from "react-icons/fi";
+import { Button, Container, Form, Nav, NavDropdown, Navbar } from "react-bootstrap";
 
 const NavbarPage = () => {
   return (
     <>
-  <Navbar
-        className="custom-navbar navbar navbar navbar-expand-md navbar-dark "
-        arial-label="Furni navigation bar"
-      >
+      <Navbar className="custom-navbar navbar navbar navbar-expand-md navbar-dark" arial-label="Furni navigation bar">
         <div className="container">
           <Link id="a" className="navbar-brand" href="/">
             Furni<span>.</span>
-            
           </Link>
 
           <Button
@@ -41,67 +27,54 @@ const NavbarPage = () => {
           <div className="collapse navbar-collapse" id="navbarsFurni">
             <ul className="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
               <li className="nav-item active">
-                <Link className="nav-link" href="/">Home</Link>
-              
+                <Link className="nav-link" href="/">
+                  Home
+                </Link>
               </li>
               <li>
-                
                 <Link className="nav-link" href="./shop">
                   Shop
                 </Link>
               </li>
               <li>
-                <Link id="a" className="nav-link" href="./aboutus">
+                <Link className="nav-link" href="./aboutus">
                   About us
                 </Link>
               </li>
               <li>
-                <Link id="a" className="nav-link" href="./services">
+                <Link className="nav-link" href="./services">
                   Services
                 </Link>
               </li>
               <li>
-                <Link id="a" className="nav-link" href="./blog">
+                <Link className="nav-link" href="./blog">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link id="a" className="nav-link" href="./news">
-                  News
-                </Link>
-              </li>
-              <li>
-                <Link  className="nav-link" href="./contactus">
+                <Link className="nav-link" href="./contactus">
                   Contact us
                 </Link>
               </li>
             </ul>
 
             <ul className="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+              <NavDropdown title={<FiUser size={20} style={{ color: "white" }} />} id="basic-nav-dropdown">
+                <NavDropdown.Item id="login-link" className="dropdown-menu-item" href="./login">Login</NavDropdown.Item>
+                <NavDropdown.Item id="signup-link" className="dropdown-menu-item" href="./signup">Signup</NavDropdown.Item>
+              </NavDropdown>
               <li>
-                <Link id="a" className="nav-link" href="./login">
-                  <Image alt="user" height={20} width={20}  src="/assets/images/navbarimage/user.svg" />
-                </Link>
-              </li>
-              <li>
-                <Link id="a" className="nav-link cart-trolley--link " href="./cart">
-                <FiShoppingCart className="cart-trolley" style={{color:"white", height:"20px", width:"20px"}} /> 
-                  <span className="cart-total--item" style={{paddingLeft: "5px", paddingRight: "5px"
-     }}>10</span>
+                <Link className="nav-link cart-trolley--link " href="./cart">
+                  <FiShoppingCart className="cart-trolley" style={{ color: "white", height: "20px", width: "20px" }} />
+                  <span className="cart-total--item" style={{ paddingLeft: "5px", paddingRight: "5px" }}>10</span>
                 </Link>
               </li>
             </ul>
           </div>
         </div>
-      </Navbar> 
-
-
-    
+      </Navbar>
     </>
   );
 };
 
 export default NavbarPage;
-  {/* Start Header/Navigation  */}
-    
-      {/* End Header/Navigation  */}

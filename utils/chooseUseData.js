@@ -8,19 +8,19 @@ const CHOOSEUSSECTION_DATA =[
     },
     {
         id:2,
-        image:"assets/images/chooseimg/bag.svg",
+        image:"/assets/images/chooseimg/bag.svg",
         title:"Easy to Shop",
         desc:"Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate."
     },
     {
         id:3,
-        image:"assets/images/chooseimg/support.svg",
+        image:"/assets/images/chooseimg/support.svg",
         title:"24/7 Support",
         desc:"Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate."
     },
     {
         id:4,
-        image:"assets/images/chooseimg/return.svg",
+        image:"/assets/images/chooseimg/return.svg",
         title:"Hassle Free Returns",
         desc:"Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate."
     },
@@ -33,7 +33,7 @@ const CHOOSEUSSECTION_DATA =[
     },
     {
         id:6,
-        image:"assets/images/chooseimg/bag.svg",
+        image:"/assets/images/chooseimg/bag.svg",
         title:"Easy to Shop",
         desc:"Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate."
     },
@@ -44,7 +44,7 @@ const CHOOSEUSSECTION_DATA =[
         desc:"Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate."
     },
     {
-        image:"assets/images/chooseimg/return.svg",
+        image:"/assets/images/chooseimg/return.svg",
         title:"Hassle Free Returns",
         desc:"Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate."
     }
