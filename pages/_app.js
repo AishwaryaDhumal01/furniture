@@ -9,13 +9,12 @@ import { Provider, useStore } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 
 const WrappedApp = wrapper.withRedux(({ Component, pageProps }) => {
+  const getLayout = Component.getLayout || ((page) => page);
   const store = useStore();
-  return (
+  return getLayout (
     <Provider store={store}>
       <PersistGate loading={null} persistor={store.__persistor}>
-        <LayoutPage>
           <Component {...pageProps} />
-        </LayoutPage>
       </PersistGate>
     </Provider>
   );

@@ -1,4 +1,5 @@
 import ContactusPage from '@/component/contactusPage'
+import LayoutPage from '@/component/layout';
 import React from 'react'
 
 const Contact = () => {
@@ -6,5 +7,9 @@ const Contact = () => {
     <ContactusPage/>
   )
 }
+
+Contact.getLayout = function getLayout(page) {
+  return <LayoutPage>{page}</LayoutPage>;
+};
 
 export default Contact

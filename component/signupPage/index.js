@@ -7,7 +7,7 @@ import { FiArrowLeft, FiArrowRight, FiUserPlus } from "react-icons/fi";
 const Signup = () => {
   return (
     <div className="signup-form-container"> {/* Use the unique CSS class name */}
-      <h1>Signup Page</h1>
+     <center><h1>Signup Page</h1></center> 
       <Formik
         initialValues={{
           email: "",
@@ -62,9 +62,19 @@ const Signup = () => {
         )}
       </Formik>
       {/* Icons at the bottom */}
-      <div className="bottom-icons">
-        <FiArrowLeft className="back-icon" />
-        <FiArrowRight className="signup-icon" />
+      <div className="bottom-icon">
+        <span>
+         
+        <FiArrowLeft className="back-icons" />
+          Back
+        </span>
+        <span>
+         Login
+        <FiArrowRight className="login-icons" />
+
+        </span>
+       
+        
       </div>
     </div>
   );

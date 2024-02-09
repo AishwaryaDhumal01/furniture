@@ -17,7 +17,8 @@ export const dataSlice = createSlice({
   name: "data",
   initialState: {
     data: [],
-    error: null
+    error: null,
+    filteredData: [] // Add filteredData in initialState
   },
   reducers: {
     filterDataByCategory(state, action) {
@@ -29,6 +30,7 @@ export const dataSlice = createSlice({
     builder
       .addCase(fetchData.fulfilled, (state, action) => {
         state.data = action.payload;
+        state.filteredData = action.payload; // Set filteredData initially with all data
       })
       .addCase(fetchData.rejected, (state, action) => {
         state.error = action.error.message;

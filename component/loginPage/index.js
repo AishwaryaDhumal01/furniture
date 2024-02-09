@@ -1,12 +1,12 @@
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { FiArrowLeft, FiArrowRight, FiUserPlus } from "react-icons/fi";
+import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 
 const LoginPage = () => {
   return (
     <div className="login-container">
-      <h1>Login Form</h1>
+     <center><h1>Login Form</h1></center> 
       <Formik
         initialValues={{
           email: "",
@@ -47,8 +47,8 @@ const LoginPage = () => {
         )}
       </Formik>
       <div className="bottom-icons">
-        <FiArrowLeft className="back-icon" />
-       <FiArrowRight className="signup-icon" />
+      <span   > <FiArrowLeft className="back-icon" />Back</span>
+        <span>Signup<FiArrowRight className="signup-icon" /></span>
       </div>
     </div>
   );
