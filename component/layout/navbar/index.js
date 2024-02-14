@@ -2,8 +2,12 @@ import Link from "next/link";
 import React from "react";
 import { FiUser, FiShoppingCart } from "react-icons/fi";
 import { Button, Container, Form, Nav, NavDropdown, Navbar } from "react-bootstrap";
+import { selectCardCount } from "@/utils/reducers/cart.slice";
+import { useSelector } from "react-redux";
 
 const NavbarPage = () => {
+  const cardCount = useSelector(selectCardCount);
+
   return (
     <>
       <Navbar className="custom-navbar navbar navbar navbar-expand-md navbar-dark" arial-label="Furni navigation bar">
@@ -66,7 +70,7 @@ const NavbarPage = () => {
               <li>
                 <Link className="nav-link cart-trolley--link " href="./cart">
                   <FiShoppingCart className="cart-trolley" style={{ color: "white", height: "20px", width: "20px" }} />
-                  <span className="cart-total--item" style={{ paddingLeft: "5px", paddingRight: "5px" }}>10</span>
+                  <span className="cart-total--item" style={{ paddingLeft: "5px", paddingRight: "5px" }}>{cardCount}</span>
                 </Link>
               </li>
             </ul>

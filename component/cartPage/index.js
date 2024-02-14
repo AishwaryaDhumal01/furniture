@@ -1,64 +1,183 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectCartItems,selectCartTotalPrice,removeItemFromCart } from '@/utils/reducers/cart.slice';
-import TopSection from '../landingPage/topSection';
+import React, { useState } from 'react'
+import TopSection from '../landingPage/topSection'
+import Image from 'next/image';
+import Link from 'next/link';
+import { useSelector,useDispatch } from 'react-redux';
+import { selectCards,removeToCart,removeAll ,increaseQuantity,decreaseQuantity,setQuantity} from '@/utils/reducers/cart.slice';
+import TopSection_CONTENT from '@/utils/constants/topSectionContent';
+
 
 const CartPage = () => {
+  const cards = useSelector(selectCards);
   const dispatch = useDispatch();
-  const cartItems = useSelector(selectCartItems);
-  const cartTotalPrice = useSelector(selectCartTotalPrice);
 
-  const handleRemoveFromCart = (itemId) => {
-    console.log('Removing item:', itemId); // Debugging statement
-    dispatch(removeItemFromCart(itemId));
-  };
+  function handleRemoveToCart(id){
+    dispatch(removeToCart(id))
+  }
+ function handleRemoveAll(){
+  dispatch(removeAll())
 
-  console.log('Cart Items:', cartItems); // Debugging statement
-
-  return (
-    <>
-      <TopSection />
-
-      <div className="untree_co-section before-footer-section">
-        <div className="container">
-          <div className="row mb-5">
-            <form className="col-md-12" method="post">
-              <div className="site-blocks-table">
-                <table className="table">
-                  <thead>
-                    <tr>
-                      <th className="product-thumbnail">Image</th>
-                      <th className="product-name">Product</th>
-                      <th className="product-price">Price</th>
-                      <th className="product-quantity">Quantity</th>
-                      <th className="product-total">Total</th>
-                      <th className="product-remove">Remove</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {cartItems.map(item => (
-                      <tr key={item.id}>
-                        <td className="product-thumbnail">
-                          <img src={item.image} alt={item.title} className="img-fluid" />
-                        </td>
-                        <td className="product-name">
-                          <h2 className="h5 text-black">{item.title}</h2>
-                        </td>
-                        <td>${item.price}</td>
-                        <td>{item.quantity}</td>
-                        <td>${item.price * item.quantity}</td>
-                        <td><button onClick={() => handleRemoveFromCart(item.id)} className="btn btn-black btn-sm">Remove</button></td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </>
-  );
+ }
+ function handleIncreaseQuantity(id) {
+   dispatch(increaseQuantity({ id }));
+ 
 }
 
-export default CartPage;
+function handleDecreaseQuantity(id) {
+  dispatch(decreaseQuantity({ id }));
+}
+
+function handleSetQuantity(id, value) {
+  // Ensure the quantity is not less than 1
+  const newQuantity = parseInt(value) < 1 ? 1 : parseInt(value);
+  dispatch(setQuantity({ id, quantity: newQuantity }));
+}
+
+  return (
+   <>
+   <TopSection page={TopSection_CONTENT.cart.title}/>
+
+   <div className="untree_co-section before-footer-section">
+            <div className="container">
+            
+              <div className="row mb-5">
+                <form className="col-md-12" method="post">
+                  <div className="site-blocks-table">
+                    <table className="table">
+                      <thead>
+                        <tr>
+                          <th className="product-thumbnail">Image</th>
+                          <th className="product-name">Product</th>
+                          <th className="product-price">Price</th>
+                          <th className="product-quantity">Quantity</th>
+                          <th className="product-total" >Total</th>
+                          {/* <th className="product-remove"  >Remove All</th> */}
+                          <th className=" product-remove product-removepointer "  style={{cursor:"pointer", backgroundColor:"#00000ccc", color:"white"}} onClick={handleRemoveAll}>Remove All</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                       
+                      {cards.map(card => (
+               <tr key={card.id}>
+               <td className="product-thumbnail">
+    
+                  <img src={card.image} className="img-fluid"></img>
+                 {/* <Image height={200} width={200} src={card.image} alt={card.title} className="img-fluid"/> */}
+               </td>
+               <td className="product-name">
+                 <h2 className="h5 text-black">{card.name}</h2>
+               </td>
+               <td>${card.price}</td>
+               <td>
+                <div className="input-group mb-3 d-flex align-items-center quantity-container" style={{maxWidth: "120px"}}>
+                   <div className="input-group-prepend">
+                     <button className="btn btn-outline-black decrease" onClick={()=> handleDecreaseQuantity(card.id)}  type="button">&minus;</button>
+                   </div>
+                   <input type="text" className="form-control text-center quantity-amount" value={card.quantity|| 1} 
+                   onChange={(e) => handleSetQuantity(card.id, e.target.value)} placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1"/>
+                   <div className="input-group-append">
+                     <button onClick={() => handleIncreaseQuantity(card.id)}  className="btn btn-outline-black increase" type="button">+</button>
+                   </div>
+                </div>
+
+               </td>
+               <td>${card.total}</td>
+               <td><Link href="#" onClick={() => handleRemoveToCart(card.id)}  className="btn btn-black btn-sm">X</Link></td>
+             </tr>
+          
+        ))}
+                        {/* <tr>
+                          <td className="product-thumbnail">
+                            <Image  height={200} width={200} src="/assets/images/productsecimg/product-2.png" alt="Image" className="img-fluid"/>
+                          </td>
+                          <td className="product-name">
+                            <h2 className="h5 text-black">Product 2</h2>
+                          </td>
+                          <td>$49.00</td>
+                          <td>
+                            <div className="input-group mb-3 d-flex align-items-center quantity-container" style={{maxWidth: "120px"}}>
+                              <div className="input-group-prepend">
+                                <button className="btn btn-outline-black decrease" type="button">&minus;</button>
+                              </div>
+                              <input type="text" className="form-control text-center quantity-amount" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1"/>
+                              <div className="input-group-append">
+                                <button className="btn btn-outline-black increase" type="button">&plus;</button>
+                              </div>
+                            </div>
+        
+                          </td>
+                          <td>$49.00</td>
+                          <td><Link href="#" className="btn btn-black btn-sm">X</Link></td>
+                        </tr> */}
+                      </tbody>
+                    </table>
+                  </div>
+                </form>
+              </div>
+        
+              <div className="row">
+                <div className="col-md-6">
+                  <div className="row mb-5">
+                    <div className="col-md-6 mb-3 mb-md-0">
+                      <button className="btn btn-black btn-sm btn-block">Update Cart</button>
+                    </div>
+                    <div className="col-md-6">
+                      <Link href="./shop" className="btn btn-outline-black btn-sm btn-block" >Continue Shopping</Link>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-md-12">
+                      <label className="text-black h4" htmlFor="coupon">Coupon</label>
+                      <p>Enter your coupon code if you have one.</p>
+                    </div>
+                    <div className="col-md-8 mb-3 mb-md-0">
+                      <input type="text" className="form-control py-3" id="coupon" placeholder="Coupon Code" />
+                    </div>
+                    <div className="col-md-4">
+                      <button className="btn btn-black">Apply Coupon</button>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-6 pl-5">
+                  <div className="row justify-content-end">
+                    <div className="col-md-7">
+                      <div className="row">
+                        <div className="col-md-12 text-right border-bottom mb-5">
+                          <h3 className="text-black h4 text-uppercase">Cart Totals</h3>
+                        </div>
+                      </div>
+                      <div className="row mb-3">
+                        <div className="col-md-6">
+                          <span className="text-black">Subtotal</span>
+                        </div>
+                        <div className="col-md-6 text-right">
+                          <strong className="text-black">$230.00</strong>
+                        </div>
+                      </div>
+                      <div className="row mb-5">
+                        <div className="col-md-6">
+                          <span className="text-black">Total</span>
+                        </div>
+                        <div className="col-md-6 text-right">
+                          <strong className="text-black">$230.00</strong>
+                        </div>
+                      </div>
+        
+                      <div className="row">
+                        <div className="col-md-12">
+                          <Link className="btn btn-black btn-lg py-3 btn-block" href="./checkout">Proceed To Checkout</Link>
+                         
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+		
+   </>
+  )
+}
+
+export default CartPage
