@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { useSelector } from 'react-redux';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import Link from 'next/link';
 
 const CheckoutPage = () => {
+  const router = useRouter();
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn); 
+  useEffect(() => {
+    // Check if the user is logged in
+    if (!isLoggedIn) {
+      // If not logged in, redirect to the login page
+      router.push('/login');
+    }
+  }, [isLoggedIn, router]);
+
+  // If user is not logged in, redirecting will prevent rendering the rest of the component
+  if (!isLoggedIn) {
+    return null;
+  }
+
   return (
     <>
       <div className="untree_co-section">
